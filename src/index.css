@@ -5,18 +5,20 @@
 }
 
 body {
-  background: #111;
+  background: #f3eadf;
   overflow: hidden;
   font-family: monospace;
 }
 
 .screen {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 
   display: flex;
   justify-content: center;
   align-items: center;
+
+  background: #f3eadf;
 
   overflow: hidden;
 }
@@ -24,71 +26,53 @@ body {
 .room {
   position: relative;
 
-  width: 640px;
-  height: 360px;
-
-  image-rendering: pixelated;
+  width: min(90vw, 700px);
+  aspect-ratio: 4 / 3;
 }
 
-/* Pixel art rendering */
+/* Pixel rendering */
 img {
   image-rendering: pixelated;
   user-select: none;
   -webkit-user-drag: none;
 }
 
-/* Wall */
-.wall {
-  position: absolute;
-
-  width: 100%;
-  height: 75%;
-
-  background: #c8b08a;
-}
-
-/* Floor */
-.floor {
-  position: absolute;
-
-  bottom: 0;
-
-  width: 100%;
-  height: 25%;
-
-  background: #6e4b2a;
-}
-
 /* Lola */
 .lola {
   position: absolute;
 
-  width: 140px;
+  width: 38%;
 
-  left: 220px;
-  bottom: 70px;
+  left: 20%;
+  bottom: 5%;
+
+  image-rendering: pixelated;
 }
 
 /* Table */
 .table {
   position: absolute;
 
-  width: 120px;
+  width: 30%;
 
-  left: 420px;
-  bottom: 70px;
+  right: 10%;
+  bottom: 5%;
+
+  image-rendering: pixelated;
 }
 
 /* Radio */
 .radio {
   position: absolute;
 
-  width: 70px;
+  width: 14%;
 
-  left: 445px;
-  bottom: 170px;
+  right: 16%;
+  bottom: 42%;
 
   cursor: pointer;
+
+  image-rendering: pixelated;
 
   transition: transform 0.1s;
 }
@@ -104,13 +88,12 @@ img {
 .title {
   position: absolute;
 
-  top: 18px;
+  top: 20px;
   left: 20px;
 
-  color: white;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 24px);
 
-  text-shadow: 2px 2px #000;
+  color: #5c4033;
 }
 
 @keyframes bounce {
